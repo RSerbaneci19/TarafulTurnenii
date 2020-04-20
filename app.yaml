@@ -12,6 +12,7 @@ handlers:
 
 skip_files:
   - e2e/
+  - .idea/
   - node_modules/
   - src/
   - ^(.*/)?\..*$
