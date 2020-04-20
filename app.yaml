@@ -1,9 +1,13 @@
+# [START Taraful Turnenii]
+runtime: nodejs13
+
 automatic_scaling:
   # 1 instance to control costs
   max_instances: 1
   # maintain a resident instance to avoid startup latency
   min_idle_instances: 1
 
+handlers:
   # static files directory
   - url: /(.*)
     secure: always
