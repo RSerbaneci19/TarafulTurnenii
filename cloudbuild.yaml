@@ -3,15 +3,15 @@ steps:
   - id: 'Install Node Modules'
     name: node:13.13.0
     entrypoint: npm
-    args: [install]
+    args: ['install']
 
 
   - id: 'Build --PROD'
     name: node:13.13.0
     entrypoint: npm
-    args: [run, build --prod]
+    args: ['run', 'build-prod']
 
 
   - id: 'Deploy & Go Live'
     name: 'gcr.io/cloud-builders/gcloud'
-    args: [app, deploy]
+    args: ['app', 'deploy']
