@@ -4,11 +4,23 @@ threadsafe: yes
 
 handlers:
 
+  - url: /(.*\.css)
+    static_files: dist/\1
+    upload: dist/(.*\.css)
+
+  - url: /(.*\.html)
+    static_files: dist/\1
+    upload: dist/(.*\.html)
+
+  # Site root.
   - url: /
     static_files: dist/index.html
     upload: dist/index.html
-  - url: /
-    static_dir: dist
+
+  # Catch-all rule, responsible from handling Angular application routes (deeplinks).
+  - url: /.*
+    static_files: dist/index.html
+    upload: dist/index.html
 
 skip_files:
   - e2e/
@@ -20,4 +32,3 @@ skip_files:
   - ^(.*/)?.*\.md$
   - ^(.*/)?.*\.yaml$
   - ^LICENSE
-  view rawapp.yaml hosted with ❤ by GitHub
