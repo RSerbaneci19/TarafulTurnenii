@@ -1,34 +1,24 @@
-runtime: python27
-api_version: 1
-threadsafe: yes
+runtime: nodejs13
+
+# Static File Cache Time
+default_expiration: 600s
+
+automatic_scaling:
+  # 1 instance to control costs
+  max_instances: 1
+  # Maintain a resident instance to avoid startup latency
+  min_idle_instances: 1
 
 handlers:
 
-  - url: /(.*\.css)
-    static_files: dist/\1
-    upload: dist/(.*\.css)
+  - url: /(.*)
+      secure: always
+      static_files: dist/\1
+      # passthrough if file not found
+      require_matching_file: true
+      upload: dist/.*
 
-  - url: /(.*\.html)
-    static_files: dist/\1
-    upload: dist/(.*\.html)
-
-  # Site root.
-  - url: /
-    static_files: dist/index.html
-    upload: dist/index.html
-
-  # Catch-all rule, responsible from handling Angular application routes (deeplinks).
-  - url: /.*
-    static_files: dist/index.html
-    upload: dist/index.html
-
-skip_files:
-  - e2e/
-  - .idea/
-  - node_modules/
-  - src/
-  - ^(.*/)?\..*$
-  - ^(.*/)?.*\.json$
-  - ^(.*/)?.*\.md$
-  - ^(.*/)?.*\.yaml$
-  - ^LICENSE
+  - url: (.*)
+      secure: always
+      static_files: dist/index.html
+      upload:  dist/index.html
