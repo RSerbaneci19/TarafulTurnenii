@@ -1,0 +1,31 @@
+<html>
+<body>
+<div class="video_box">
+  <div class="video_overlay"></div>
+  <video #videoElement [loop]="true" [muted]="true" [volume]="0.2" [autoplay]="true" playsinline id="bgVideo">
+    <source src="assets/bgVideo.mp4" type="video/mp4"/>
+  </video>
+</div>
+<div class="content">
+  <div class="text-content">
+    <h1>Taraful Turnenii & Leonard de la Rosiori</h1>
+    <p>O familie formata din peste cincisprezece oameni, caci am depasit de multa vreme pragul de echipa, cu o dedicare si iubire aparte in domeniul muzical, suntem bucurosi si onorati sa depundem eforturile
+      necesare intrucat la data evenimentului dumneavoastra, sa fim siguri ca va putem oferii o atmosfera si o performanta de cea mai inalta calitate si nu in ultimul rand, memorii ce vor ramane alaturi de voi
+      toata viata !
+    </p>
+  </div>
+  <div class="mediaButtons">
+  <button #myBtn class="mediaBtn" id="myBtn" (click)="playPause(videoElement, myBtn)">Pause Video</button>
+  <button #muteBtn class="mediaBtn" id="muteBtn" (click)="changeImagePathAndMuteUnmuteVideo(videoElement, muteBtn)">Unmute Video
+  </button>
+    <div class="volumeBar">
+      <img src="{{imageSrc}}">
+  <mat-slider class="matSlider" [value]="matBarValue"
+              (input)="videoElement.volume = $event.value"
+              (change)="changeBtnIcoWithSlider(videoElement, muteBtn)" tickInterval="0.01" step="0.01" min="0"
+              max="1"></mat-slider>
+  </div>
+</div>
+</div>
+</body>
+</html>

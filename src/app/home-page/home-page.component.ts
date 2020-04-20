@@ -1,0 +1,55 @@
+import {Component, OnInit} from '@angular/core';
+
+@Component({
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.css']
+})
+export class HomePageComponent implements OnInit {
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
+
+  public imageSrc: String = 'assets/MuteIcon.png';
+  public matBarValue: Number = 0;
+
+  playPause(video, btn) {
+    if (video.paused) {
+      video.play();
+      btn.innerHTML = "Pause Video";
+    } else {
+      video.pause();
+      btn.innerHTML = "Play Video";
+    }
+  }
+
+  changeImagePathAndMuteUnmuteVideo(video: HTMLVideoElement, btn) {
+    if (video.muted) {
+      video.muted = false;
+      btn.innerHTML = 'Mute Video';
+      this.imageSrc = 'assets/VolIcon.png';
+      this.matBarValue = video.volume;
+    } else {
+      video.muted = true;
+      btn.innerHTML = 'Unmute Video';
+      this.imageSrc = 'assets/MuteIcon.png';
+      this.matBarValue = 0;
+    }
+  }
+
+  changeBtnIcoWithSlider(videoElement, muteBtn: HTMLButtonElement) {
+    if (videoElement.volume > 0) {
+      videoElement.muted = false;
+      this.matBarValue = videoElement.volume;
+      muteBtn.innerHTML = 'Mute Video'
+      this.imageSrc = 'assets/VolIcon.png';
+    } else {
+      muteBtn.innerHTML = 'Unmute Video';
+      this.imageSrc = 'assets/MuteIcon.png';
+      videoElement.muted = true;
+    }
+  }
+}
