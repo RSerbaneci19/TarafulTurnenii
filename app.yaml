@@ -1,22 +1,18 @@
-runtime: nodejs13
-
-# Static File Cache Time
-default_expiration: 600s
-
 automatic_scaling:
   # 1 instance to control costs
   max_instances: 1
-  # Maintain a resident instance to avoid startup latency
+  # maintain a resident instance to avoid startup latency
   min_idle_instances: 1
 
-handlers:
-
+  # static files directory
   - url: /(.*)
-      static_files: dist/\1
-      # passthrough if file not found
-      require_matching_file: true
-      upload: dist/.*
-
+    secure: always
+    static_files: dist/\1
+    # passthrough if file not found
+    require_matching_file: true
+    upload: dist/.*
+  # serve index.html for all remaining i.e. not found
   - url: (.*)
-      static_files: dist/index.html
-      upload:  dist/index.html
+    secure: always
+    static_files: dist/index.html
+    upload: dist/index.html
