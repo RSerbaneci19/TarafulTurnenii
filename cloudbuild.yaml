@@ -1,10 +1,10 @@
 steps:
 
-  - name: gcr.io/cloud-builders/npm@latest
+  - name: gcr.io/cloud-builders/npm:node:13.13.0
     args: [ install ]
 
-  - name: gcr.io/cloud-builders/npm@latest
+  - name: gcr.io/cloud-builders/npm:node:13.13.0
     args: [ run, build, --prod ]
 
-  - name: gcr.io/cloud-builders/gcloud@latest
+  - name: gcr.io/cloud-builders/npm:node:13.13.0
     args: [ app, deploy ]
