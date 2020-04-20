@@ -12,13 +12,11 @@ automatic_scaling:
 handlers:
 
   - url: /(.*)
-      secure: always
       static_files: dist/\1
       # passthrough if file not found
       require_matching_file: true
       upload: dist/.*
 
   - url: (.*)
-      secure: always
       static_files: dist/index.html
       upload:  dist/index.html
