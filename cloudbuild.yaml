@@ -3,16 +3,16 @@ steps:
 - id: 'install backend node_modules'
   name: node:13.13.0
   entrypoint: npm
-  args: ['install']
+  args: [install]
 
 
 - id: 'build backend'
   name: node:13.13.0
   entrypoint: npm
-  args: ['run', 'build:prod']
+  args: [run, build, --prod]
 
 
 - id: 'build frontend'
   name: node:13.13.0
   entrypoint: npm
-  args: ['app', 'deploy']
+  args: [app, deploy]
