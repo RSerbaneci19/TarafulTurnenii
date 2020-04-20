@@ -1,18 +1,17 @@
 steps:
 
-- id: 'install backend node_modules'
-  name: node:13.13.0
-  entrypoint: npm
-  args: [install]
+  - id: 'Install Node Modules'
+    name: node:13.13.0
+    entrypoint: npm
+    args: [install]
 
 
-- id: 'build backend'
-  name: node:13.13.0
-  entrypoint: npm
-  args: [run, build, --prod]
+  - id: 'Build --PROD'
+    name: node:13.13.0
+    entrypoint: npm
+    args: [run, build --prod]
 
 
-- id: 'build frontend'
-  name: node:13.13.0
-  entrypoint: npm
-  args: [app, deploy]
+  - id: 'Deploy & Go Live'
+    name: 'gcr.io/cloud-builders/gcloud'
+    args: [app, deploy]
