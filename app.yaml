@@ -1,5 +1,5 @@
 # [START Taraful Turnenii]
-runtime: nodejs13
+runtime: nodejs12
 
 automatic_scaling:
   # 1 instance to control costs
