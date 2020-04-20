@@ -1,10 +1,18 @@
 steps:
 
-  - name: gcr.io/cloud-builders/npm:node:13.13.0
-    args: [ install ]
+- id: 'install backend node_modules'
+  name: node:13.13.0
+  entrypoint: npm
+  args: ['install']
 
-  - name: gcr.io/cloud-builders/npm:node:13.13.0
-    args: [ run, build, --prod ]
 
-  - name: gcr.io/cloud-builders/npm:node:13.13.0
-    args: [ app, deploy ]
+- id: 'build backend'
+  name: node:13.13.0
+  entrypoint: npm
+  args: ['run', 'build:prod']
+
+
+- id: 'build frontend'
+  name: node:13.13.0
+  entrypoint: npm
+  args: ['app', 'deploy']
