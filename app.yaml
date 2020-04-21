@@ -1,8 +1,6 @@
 # [START Taraful Turnenii]
-runtime: nodejs12
 
-env_variables:
-  BUCKET_NAME: "tarafulturnenii-assets"
+runtime: nodejs12
 
 handlers:
   # static files directory
@@ -10,7 +8,6 @@ handlers:
     secure: always
     redirect_http_response_code: '301'
     static_files: dist/\1
-  # passthrough if file not found
     require_matching_file: true
     upload: dist/.*
 
@@ -20,3 +17,5 @@ handlers:
     redirect_http_response_code: 301
     static_files: dist/index.html
     upload:  dist/index.html
+
+# [END Taraful Turnenii]
