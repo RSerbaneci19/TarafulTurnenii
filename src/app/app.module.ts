@@ -16,8 +16,6 @@ import {HomePageComponent} from './home-page/home-page.component';
 import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 
-import 'hammerjs';
-
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'home', component: HomePageComponent},
