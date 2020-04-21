@@ -9,22 +9,25 @@
 <div class="content">
   <div class="text-content">
     <h1>Taraful Turnenii & Leonard de la Roșiori</h1>
-    <p>O familie formată din peste cincisprezece oameni, căci am depășit de multă vreme pragul de echipă, cu o dedicare și iubire aparte față de domeniul muzical, suntem bucuroși și onorati să depunem eforturile
-      necesare întrucât la data evenimentului dumneavoastră, să fim siguri că vă putem oferi o atmosferă și o performanță de cea mai înaltă calitate și nu în ultimul rand, amintiri ce vă vor rămâne alături toată viața !
+    <p>O familie formată din peste cincisprezece oameni, căci am depășit de multă vreme pragul de echipă, cu o dedicare
+      și iubire aparte față de domeniul muzical, suntem bucuroși și onorati să depunem eforturile
+      necesare întrucât la data evenimentului dumneavoastră, să fim siguri că vă putem oferi o atmosferă și o
+      performanță de cea mai înaltă calitate și nu în ultimul rand, amintiri ce vă vor rămâne alături toată viața !
     </p>
   </div>
   <div class="mediaButtons">
-  <button #myBtn class="mediaBtn" id="myBtn" (click)="playPause(videoElement, myBtn)">Pause Video</button>
-  <button #muteBtn class="mediaBtn" id="muteBtn" (click)="changeImagePathAndMuteUnmuteVideo(videoElement, muteBtn)">Unmute Video
-  </button>
+    <button #myBtn class="mediaBtn" id="myBtn" (click)="playPause(videoElement, myBtn)">Pause Video</button>
+    <button #muteBtn class="mediaBtn" id="muteBtn" (click)="changeImagePathAndMuteUnmuteVideo(videoElement, muteBtn)">
+      Unmute Video
+    </button>
     <div class="volumeBar">
       <img src="{{imageSrc}}">
-  <mat-slider class="matSlider" [value]="matBarValue"
-              (input)="videoElement.volume = $event.value"
-              (change)="changeBtnIcoWithSlider(videoElement, muteBtn)" tickInterval="0.01" step="0.01" min="0"
-              max="1"></mat-slider>
+      <mat-slider class="matSlider" [value]="matBarValue"
+                  (input)="videoElement.volume = $event.value"
+                  (change)="changeBtnIcoWithSlider(videoElement, muteBtn)" tickInterval="0.01" step="0.01" min="0"
+                  max="1"></mat-slider>
+    </div>
   </div>
-</div>
 </div>
 </body>
 </html>
