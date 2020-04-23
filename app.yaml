@@ -1,6 +1,16 @@
 # [START Taraful Turnenii]
-
 runtime: nodejs12
+
+# Set static file cache time / Avoid loading video BG at default 600s
+default_expiration: 3600s
+
+instance_class: F1
+
+automatic_scaling:
+  # 1 instance to control costs / Remove when Prod
+  max_instances: 1
+  # maintain a resident instance to avoid startup latency
+  min_idle_instances: 1
 
 handlers:
   # static files directory
