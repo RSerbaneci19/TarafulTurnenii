@@ -15,10 +15,14 @@ import {AppComponent} from './app.component';
 import {HomePageComponent} from './home-page/home-page.component';
 import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {ImageGalleryComponent} from './image-gallery/image-gallery.component';
+import {NgxImageGalleryModule} from 'ngx-image-gallery';
+import {FormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'home', component: HomePageComponent},
+  {path: 'gallery', component: ImageGalleryComponent},
   {path: 'error', component: NotFoundComponent},
   {path: '**', redirectTo: '/error'}
 ];
@@ -28,7 +32,8 @@ const routes: Routes = [
     AppComponent,
     HomePageComponent,
     NavBarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ImageGalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +45,10 @@ const routes: Routes = [
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    NgxImageGalleryModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

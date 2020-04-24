@@ -15,16 +15,6 @@
   margin-right: 10px;
 }
 
-.sideNavContainer {
-  z-index: 5;
-  position: absolute;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 .mat-toolbar-row {
   background: linear-gradient(to right, #6a4c09, black);
 }
@@ -72,6 +62,7 @@ img {
   max-width: 50px;
   margin-bottom: 0.3%;
   margin-left: 0.3%;
+  cursor: pointer;
 }
 
 .mat-button {
@@ -95,3 +86,7 @@ img {
   background: linear-gradient(to bottom, black, #c9a551);
 }
 
+*:focus {
+  outline: 0;
+  outline: none;
+}
