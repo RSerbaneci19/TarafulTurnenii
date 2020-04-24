@@ -91,7 +91,6 @@ img {
   color: #fafff2;
 }
 
-
 h1 {
   margin-left: 10px;
   margin-right: 7px;
@@ -114,6 +113,7 @@ p {
 @media (max-width: 397px) {
   .mediaBtn {
     margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .mat-slider {
@@ -123,6 +123,11 @@ p {
 }
 
 @media (max-width: 768px) {
+
+  .mediaBtn {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 
   .volumeBar {
     float: left;

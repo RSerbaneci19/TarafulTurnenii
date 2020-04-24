@@ -11,10 +11,12 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.hideSlider();
   }
 
   public imageSrc: String = 'assets/MuteIcon.png';
   public matBarValue: Number = 0;
+  private isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
   playPause(video, btn) {
     if (video.paused) {
@@ -23,6 +25,12 @@ export class HomePageComponent implements OnInit {
     } else {
       video.pause();
       btn.innerHTML = "Play Video";
+    }
+  }
+
+  hideSlider(): void {
+    if (this.isIOS) {
+      document.getElementById("volumeSlider").hidden = true;
     }
   }
 

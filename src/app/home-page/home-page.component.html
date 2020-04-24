@@ -20,7 +20,7 @@
     <button #muteBtn class="mediaBtn" id="muteBtn" (click)="changeImagePathAndMuteUnmuteVideo(videoElement, muteBtn)">
       Unmute Video
     </button>
-    <div class="volumeBar">
+    <div class="volumeBar" id="volumeSlider">
       <img src="{{imageSrc}}">
       <mat-slider class="matSlider" [value]="matBarValue"
                   (input)="videoElement.volume = $event.value"
