@@ -5,19 +5,16 @@
   grid-template-rows: fit-content(1fr);
   grid-gap: 5px;
   grid-column-gap: 5px;
-  width: 100vw;
+  width: 100%;
   position: absolute;
-  padding: 30px;
+  padding: 15px;
   background-color: black;
   background-repeat: repeat-y;
   z-index: 3;
 
-  > h1 {
-    text-align: center;
-  }
-
   > .ngx-image-gallery {
     top: 6.7%;
+    right: 0.5%;
   }
 
   .row {
@@ -36,51 +33,9 @@
   /* Responsive layout - makes a two column-layout instead of four columns */
   @media screen and (max-width: 800px) {
 
-    .row {
-      padding: 0 5px;
-    }
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    grid-column-gap: 5px;
 
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(0, 5vw);
-    grid-gap: 10px;
-
-  }
-
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
-    }
-  }
-
-  > .form {
-    input,
-    select {
-      border-radius: 0px !important;
-    }
-
-    > .field {
-      > .inline {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-
-        > label {
-          position: absolute;
-          margin-right: 20px;
-          cursor: pointer;
-        }
-      }
-    }
-
-    > .button-container {
-      margin-top: 20px;
-      z-index: 3;
-
-      > .button {
-        border-radius: 0px;
-      }
-    }
   }
 }

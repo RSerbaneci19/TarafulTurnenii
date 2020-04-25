@@ -94,14 +94,12 @@ img {
 h1 {
   margin-left: 10px;
   margin-right: 7px;
-  text-shadow: #c9a551;
 }
 
 p {
   font-style: italic;
   margin-left: 10px;
   margin-right: 7px;
-  text-shadow: #c9a551;
 }
 
 @media (max-width: 299px) {
