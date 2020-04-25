@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {GALLERY_CONF, GALLERY_IMAGE, NgxImageGalleryComponent} from "ngx-image-gallery";
+import {Title} from "@angular/platform-browser";
 
 import _ from 'lodash';
 
@@ -11,6 +12,13 @@ import _ from 'lodash';
 export class ImageGalleryComponent implements OnInit {
 
   @ViewChild(NgxImageGalleryComponent) ngxImageGallery: NgxImageGalleryComponent;
+
+  constructor(private titleService:Title) {
+    this.titleService.setTitle("Taraful Turnenii - Galerie")
+  }
+
+  ngOnInit() {
+  }
 
   images: GALLERY_IMAGE[] = [
     {
@@ -315,12 +323,6 @@ export class ImageGalleryComponent implements OnInit {
   };
 
   range = _.range;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   openGallery(index) {
     this.ngxImageGallery.open(index);
