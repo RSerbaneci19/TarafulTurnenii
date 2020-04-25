@@ -8,7 +8,7 @@ import {Title} from "@angular/platform-browser";
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private titleService:Title) {
+  constructor(private titleService: Title) {
     this.titleService.setTitle("Taraful Turnenii - Formatie Evenimente")
   }
 

@@ -13,7 +13,7 @@ export class ImageGalleryComponent implements OnInit {
 
   @ViewChild(NgxImageGalleryComponent) ngxImageGallery: NgxImageGalleryComponent;
 
-  constructor(private titleService:Title) {
+  constructor(private titleService: Title) {
     this.titleService.setTitle("Taraful Turnenii - Galerie")
   }
 
