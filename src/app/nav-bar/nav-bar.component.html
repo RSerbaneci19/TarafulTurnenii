@@ -1,25 +1,35 @@
 <div class="topNavContainer">
   <mat-toolbar color="black" xmlns="http://www.w3.org/1999/html">
     <mat-toolbar-row>
-      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
-        <mat-icon svgIcon="menu-icon" class="lonelyIcon"></mat-icon>
+      <button (click)="sidenav.toggle()" fxHide.gt-sm fxShow="true" mat-icon-button>
+        <mat-icon class="lonelyIcon" svgIcon="menu-icon"></mat-icon>
       </button>
-      <div class="menuLogo"><img routerLink="/home" routerLinkActive="active" src="assets/TarafulTurneniiLogo.png"
-                                 alt=""></div>
+      <div class="menuLogo"><img alt="" routerLink="/home" routerLinkActive="active"
+                                 src="assets/TarafulTurneniiLogo.png"></div>
       <span class="menu-spacer"></span>
-      <div class="topNavItems" fxShow="true" fxHide.lt-md>
+      <div class="topNavItems" fxHide.lt-md fxShow="true">
         <!-- The following menu items will be hidden on both SM and XS screen sizes -->
         <a mat-button routerLink="/home" routerLinkActive="active">
-          <mat-icon svgIcon="home-icon" class="topMatIcons"></mat-icon>
+          <mat-icon class="topMatIcons" svgIcon="home-icon"></mat-icon>
           ACASA</a>
         <a mat-button routerLink="/events" routerLinkActive="active">
-          <mat-icon svgIcon="event-icon" class="topMatIcons"></mat-icon>
+          <mat-icon class="topMatIcons" svgIcon="event-icon"></mat-icon>
           EVENIMENTE</a>
-        <a mat-button routerLink="/gallery" routerLinkActive="active">
-          <mat-icon svgIcon="camera-icon" class="topMatIcons"></mat-icon>
+        <a [matMenuTriggerFor]="galleryMenu" mat-button>
+          <mat-icon svgIcon="camera-icon"></mat-icon>
           GALERIE</a>
+        <mat-menu #galleryMenu="matMenu" class="custom-gallery-menu">
+          <button mat-button routerLink="/photoGallery" routerLinkActive="active">
+            <mat-icon class="dropdown-icons">camera_alt</mat-icon>
+            FOTO
+          </button>
+          <button mat-button routerLink="/videoGallery" routerLinkActive="active">
+            <mat-icon class="dropdown-icons">videocam</mat-icon>
+            VIDEO
+          </button>
+        </mat-menu>
         <a mat-button routerLink="/contact" routerLinkActive="active">
-          <mat-icon svgIcon="contact-icon" class="topMatIcons"></mat-icon>
+          <mat-icon class="topMatIcons" svgIcon="contact-icon"></mat-icon>
           CONTACT</a>
       </div>
     </mat-toolbar-row>
@@ -43,14 +53,24 @@
             EVENIMENTE</a>
         </mat-list-item>
         <mat-list-item>
-          <a mat-button routerLink="/gallery" routerLinkActive="active">
-            <mat-icon svgIcon="camera-icon"></mat-icon>
-            GALERIE</a>
-        </mat-list-item>
-        <mat-list-item>
           <a mat-button routerLink="/contact" routerLinkActive="active">
             <mat-icon svgIcon="contact-icon"></mat-icon>
             CONTACT</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a [matMenuTriggerFor]="galleryMenu" mat-button>
+            <mat-icon svgIcon="camera-icon"></mat-icon>
+            GALERIE</a>
+          <mat-menu #galleryMenu="matMenu" class="custom-gallery-menu">
+            <button mat-button routerLink="/photoGallery" routerLinkActive="active">
+              <mat-icon class="dropdown-icons">camera_alt</mat-icon>
+              FOTO
+            </button>
+            <button mat-button routerLink="/videoGallery" routerLinkActive="active">
+              <mat-icon class="dropdown-icons">videocam</mat-icon>
+              VIDEO
+            </button>
+          </mat-menu>
         </mat-list-item>
       </mat-nav-list>
     </mat-sidenav>

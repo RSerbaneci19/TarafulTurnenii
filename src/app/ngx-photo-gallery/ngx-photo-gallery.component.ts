@@ -5,21 +5,13 @@ import {Title} from "@angular/platform-browser";
 import _ from 'lodash';
 
 @Component({
-  selector: 'app-image-gallery',
-  templateUrl: './image-gallery.component.html',
-  styleUrls: ['./image-gallery.component.scss']
+  selector: 'ngx-photo-gallery',
+  templateUrl: './ngx-photo-gallery.component.html',
+  styleUrls: ['./ngx-photo-gallery.component.scss']
 })
-export class ImageGalleryComponent implements OnInit {
+export class NgxPhotoGalleryComponent implements OnInit {
 
   @ViewChild(NgxImageGalleryComponent) ngxImageGallery: NgxImageGalleryComponent;
-
-  constructor(private titleService: Title) {
-    this.titleService.setTitle("Taraful Turnenii - Galerie")
-  }
-
-  ngOnInit() {
-  }
-
   images: GALLERY_IMAGE[] = [
     {
       url: "https://scontent.ftsr1-1.fna.fbcdn.net/v/t1.0-9/81967243_558947181353045_8621538769545199616_n.jpg?_nc_cat=111&_nc_sid=8bfeb9&_nc_oc=AQlL4YsIttgU-WvVSUKiYgh9nRXtHZxPQUp6CGmyfbk0ftuHcywdnPJ_UXY3__gcJwY&_nc_ht=scontent.ftsr1-1.fna&oh=c14751249842cc66c721b63f292c5366&oe=5ECA6A2B",
@@ -302,7 +294,6 @@ export class ImageGalleryComponent implements OnInit {
       thumbnailUrl: "https://scontent.ftsr1-2.fna.fbcdn.net/v/t1.0-9/62037999_420159078565190_35680337732304896_n.jpg?_nc_cat=110&_nc_sid=8bfeb9&_nc_oc=AQm4NhUf4CsWkGDjMcWJCpT5GfY6BCd3WdBBP7kVqdl866alxYgrjG5mPHAbBa4GbbU&_nc_ht=scontent.ftsr1-2.fna&oh=43cce9fa18e5343e5de078a5287c2bd0&oe=5EC71D4E"
     },
   ];
-
   conf: GALLERY_CONF = {
     imageBorderRadius: '3px',
     imageOffset: '20px',
@@ -321,8 +312,14 @@ export class ImageGalleryComponent implements OnInit {
     showArrows: true,
     imagePointer: true
   };
-
   range = _.range;
+
+  constructor(private titleService: Title) {
+    this.titleService.setTitle("Taraful Turnenii - Galerie Foto")
+  }
+
+  ngOnInit() {
+  }
 
   openGallery(index) {
     this.ngxImageGallery.open(index);

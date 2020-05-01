@@ -15,14 +15,18 @@ import {AppComponent} from './app.component';
 import {HomePageComponent} from './home-page/home-page.component';
 import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {NotFoundComponent} from './not-found/not-found.component';
-import {ImageGalleryComponent} from './image-gallery/image-gallery.component';
+import {NgxPhotoGalleryComponent} from './ngx-photo-gallery/ngx-photo-gallery.component';
 import {NgxImageGalleryModule} from 'ngx-image-gallery';
 import {FormsModule} from "@angular/forms";
+import {MatMenuModule} from "@angular/material/menu";
+import {NgxVideoGalleryComponent} from './ngx-video-gallery/ngx-video-gallery.component';
+import {YouTubePlayerModule} from "@angular/youtube-player";
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'home', component: HomePageComponent},
-  {path: 'gallery', component: ImageGalleryComponent},
+  {path: 'photoGallery', component: NgxPhotoGalleryComponent},
+  {path: 'videoGallery', component: NgxVideoGalleryComponent},
   {path: 'error', component: NotFoundComponent},
   {path: '**', redirectTo: '/error'}
 ];
@@ -33,7 +37,8 @@ const routes: Routes = [
     HomePageComponent,
     NavBarComponent,
     NotFoundComponent,
-    ImageGalleryComponent
+    NgxPhotoGalleryComponent,
+    NgxVideoGalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +54,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     FormsModule,
+    MatMenuModule,
+    YouTubePlayerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

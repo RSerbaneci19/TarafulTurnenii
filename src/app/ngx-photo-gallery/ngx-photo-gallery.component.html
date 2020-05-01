@@ -1,0 +1,16 @@
+<div *ngFor="let image of images" class="row">
+  <div class="column">
+    <img (click)="openGallery(images.indexOf(image))" alt="" src='{{image.url}}'/>
+  </div>
+</div>
+
+<!-- Gallery component -->
+<ngx-image-gallery (onClose)="galleryClosed()"
+                   (onDelete)="deleteImage($event)"
+                   (onImageChange)="galleryImageChanged($event)"
+                   (onImageClicked)="galleryImageClicked($event)"
+                   (onOpen)="galleryOpened($event)"
+                   [conf]="conf"
+                   [images]="images"
+                   class="ngx-image-gallery"
+></ngx-image-gallery>

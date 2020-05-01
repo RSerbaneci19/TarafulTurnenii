@@ -4,9 +4,13 @@ import {Title} from "@angular/platform-browser";
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+
+  public imageSrc: String = 'assets/MuteIcon.png';
+  public matBarValue: Number = 0;
+  private isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
   constructor(private titleService: Title) {
     this.titleService.setTitle("Taraful Turnenii - Formatie Evenimente")
@@ -15,10 +19,6 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
     this.hideSlider();
   }
-
-  public imageSrc: String = 'assets/MuteIcon.png';
-  public matBarValue: Number = 0;
-  private isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
   playPause(video, btn) {
     if (video.paused) {

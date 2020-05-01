@@ -16,7 +16,7 @@
 }
 
 .mat-toolbar-row {
-  background: linear-gradient(to right, #6a4c09, black);
+  background: linear-gradient(to right, #000000, #525252);
 }
 
 .button.mat-icon {
@@ -29,6 +29,14 @@
   position: relative;
   margin-right: 10px;
   bottom: 4px;
+  transform: scale(1.5);
+}
+
+.dropdown-icons {
+  float: left;
+  margin-left: 7px;
+  position: relative;
+  margin-top: 7%;
   transform: scale(1.5);
 }
 
@@ -66,16 +74,15 @@ img {
 }
 
 .mat-button {
-  left: 2.1%;
+  left: 2.3%;
   position: relative;
   width: 170px;
   top: 4px;
-  margin-left: 1px;
-  background: linear-gradient(to bottom, #584001, black);
+  background: linear-gradient(to bottom, #424242, black);
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  padding: 2%;
+  padding: 2.1%;
   color: #fff;
   text-decoration: none;
   overflow: hidden;
@@ -83,7 +90,7 @@ img {
 }
 
 .mat-button:hover {
-  background: linear-gradient(to bottom, black, #c9a551);
+  background: linear-gradient(to bottom, black, #c1c1c1);
 }
 
 *:focus {
