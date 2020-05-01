@@ -1,4 +1,5 @@
 <html>
+<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 <body>
 <div class="video_box">
   <div class="video_overlay"></div>
@@ -9,11 +10,6 @@
 <div class="content">
   <div class="text-content">
     <h1>Taraful Turnenii & Leonard de la Roșiori</h1>
-    <p>O familie formată din peste cincisprezece oameni, căci am depășit de multă vreme pragul de echipă, cu o dedicare
-      și iubire aparte față de domeniul muzical, suntem bucuroși și onorati să depunem eforturile
-      necesare întrucât la data evenimentului dumneavoastră, să fim siguri că vă putem oferi o atmosferă și o
-      performanță de cea mai înaltă calitate și nu în ultimul rand, amintiri ce vă vor rămâne alături toată viața !
-    </p>
   </div>
   <div class="mediaButtons">
     <button #myBtn (click)="playPause(videoElement, myBtn)" class="mediaBtn" id="myBtn">Pause Video</button>
@@ -21,7 +17,7 @@
       Unmute Video
     </button>
     <div class="volumeBar" id="volumeSlider">
-      <img src="{{imageSrc}}">
+      <img alt="" src="{{imageSrc}}">
       <mat-slider (change)="changeBtnIcoWithSlider(videoElement, muteBtn)" (input)="videoElement.volume = $event.value"
                   [value]="matBarValue"
                   class="matSlider" max="1" min="0" step="0.01"
