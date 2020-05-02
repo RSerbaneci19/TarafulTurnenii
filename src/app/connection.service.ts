@@ -5,7 +5,7 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class ConnectionService {
-  url: string = 'http://localhost:8080/send';
+  url: string = 'https://localhost:8080/send';
 
   constructor(private http: HttpClient) {
   }
