@@ -5,7 +5,7 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class ConnectionService {
-  url: string = 'https://tarafulturnenii.ro:8080/send';
+  url: string = 'https://tarafulturnenii.ro/send';
 
   constructor(private http: HttpClient) {
   }
