@@ -27,8 +27,4 @@ handlers:
     redirect_http_response_code: 301
     static_files: dist/index.html
     upload:  dist/index.html
-
-network:
-  forwarded_ports:
-    - 8080/tcp
 # [END Taraful Turnenii]
