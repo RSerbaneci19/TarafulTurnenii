@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently --kill-others \"node src/app/server.js\" \"ng serve --host 192.168.1.2\"",
+    "start": "ng serve",
+    "start-backend": "concurrently --kill-others \"node src/app/server.js\"",
     "build": "ng build",
     "build-prod": "ng build --prod",
     "backend": "node src/app/server.js",
