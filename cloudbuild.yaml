@@ -5,6 +5,10 @@ steps:
     entrypoint: npm
     args: ['install']
 
+  - id: 'Run Backend'
+    name: node:13.13.0
+    entrypoint: npm
+    args: ['run', 'backend']
 
   - id: 'Build --PROD'
     name: node:13.13.0
