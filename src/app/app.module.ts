@@ -12,21 +12,24 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {HttpClientModule} from "@angular/common/http";
 
 import {AppComponent} from './app.component';
+import {AlertModule} from './_alert';
 import {HomePageComponent} from './home-page/home-page.component';
 import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {NgxPhotoGalleryComponent} from './ngx-photo-gallery/ngx-photo-gallery.component';
 import {NgxImageGalleryModule} from 'ngx-image-gallery';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatMenuModule} from "@angular/material/menu";
 import {NgxVideoGalleryComponent} from './ngx-video-gallery/ngx-video-gallery.component';
 import {YouTubePlayerModule} from "@angular/youtube-player";
+import {ContactFormComponent} from './contact-form/contact-form.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'home', component: HomePageComponent},
   {path: 'photoGallery', component: NgxPhotoGalleryComponent},
   {path: 'videoGallery', component: NgxVideoGalleryComponent},
+  {path: 'contact', component: ContactFormComponent},
   {path: 'error', component: NotFoundComponent},
   {path: '**', redirectTo: '/error'}
 ];
@@ -38,7 +41,8 @@ const routes: Routes = [
     NavBarComponent,
     NotFoundComponent,
     NgxPhotoGalleryComponent,
-    NgxVideoGalleryComponent
+    NgxVideoGalleryComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +60,8 @@ const routes: Routes = [
     FormsModule,
     MatMenuModule,
     YouTubePlayerModule,
+    ReactiveFormsModule,
+    AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

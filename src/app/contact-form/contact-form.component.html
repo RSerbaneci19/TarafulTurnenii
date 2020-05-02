@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="contactForm">
+
+  <p>Contact Taraful Turnenii</p>
+
+  <input class="form-control mb-4" formControlName="contactFormName" id="defaultContactFormName"
+         placeholder="Nume & Prenume" type="text">
+
+  <input class="form-control mb-4" formControlName="contactFormEmail" id="defaultContactFormEmail"
+         placeholder="E-mail" type="email">
+
+  <input class="form-control mb-4" formControlName="contactFormPhone" id="defaultContactFormPhone"
+         placeholder="Nr. Telefon" type="text">
+
+  <label>Subiect</label>
+  <select class="browser-default custom-select mb-4" formControlName="contactFormSubjects">
+    <option disabled selected value="">Alegeti o optiune</option>
+    <option value="Contact Taraful Turnenii">Contact Taraful Turnenii</option>
+    <option value="Raportare Problema">Raporteaza o problema</option>
+    <option value="Feedback Aplicatie">Feedback</option>
+  </select>
+
+  <div class="form-group">
+    <textarea class="form-control rounded-0" formControlName="contactFormMessage"
+              id="exampleFormControlTextarea2"
+              placeholder="Mesaj" rows="3"></textarea>
+  </div>
+
+  <button [disabled]="disabledSubmitButton"
+          class="z-depth-0 my-4 waves-effect" type="submit">TRIMITE
+  </button>
+  <alert></alert>
+</form>
+
