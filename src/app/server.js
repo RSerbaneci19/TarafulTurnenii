@@ -34,7 +34,7 @@ const transporter = nodemailer.createTransport({
 transporter.use('compile', hbs(handlebarOptions));
 
 app.use(bodyParser.json());
-
+app.use(express.static('./dist'))
 app.use(function (req, res, next) {
 
   res.header("Access-Control-Allow-Origin", "*");
