@@ -5,17 +5,16 @@ steps:
     entrypoint: npm
     args: ['install']
 
-  - id: 'Run Backend'
-    name: node:13.13.0
-    entrypoint: npm
-    args: ['run', 'backend']
-
   - id: 'Build --PROD'
     name: node:13.13.0
     entrypoint: npm
     args: ['run', 'build-prod']
 
-
   - id: 'Deploy & Go Live'
     name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy']
+
+  - id: 'Run Backend'
+    name: node:13.13.0
+    entrypoint: npm
+    args: ['run', 'backend']

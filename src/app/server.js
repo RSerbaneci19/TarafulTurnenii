@@ -52,7 +52,7 @@ app.post('/send', function (req, res) {
 
   let mailOptions = {
     from: '"Taraful Turnenii" <tarafulturnenii@gmail.com>',
-    to: ['R.Serbaneci19@gmail.com', 'turneanum@gmail.com'],
+    to: ['R.Serbaneci19@gmail.com'],
     subject: messageSubject,
     template: 'index',
     context: {
