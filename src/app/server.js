@@ -8,11 +8,11 @@ const hbs = require('nodemailer-express-handlebars')
 const handlebarOptions = {
   viewEngine: {
     extName: '.hbs',
-    partialsDir: './views',
-    layoutsDir: './views',
+    partialsDir: './src/app/views',
+    layoutsDir: './src/app/views',
     defaultLayout: 'index.hbs',
   },
-  viewPath: './views',
+  viewPath: './src/app/views',
   extName: '.hbs',
 };
 
