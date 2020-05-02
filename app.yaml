@@ -1,5 +1,6 @@
 # [START Taraful Turnenii]
 runtime: nodejs12
+service: default
 
 # Set static file cache time / Avoid loading video BG at default 600s
 default_expiration: 3600s

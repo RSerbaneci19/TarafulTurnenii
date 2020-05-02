@@ -13,8 +13,3 @@ steps:
   - id: 'Deploy & Go Live'
     name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy']
-
-  - id: 'Start Backend'
-    name: node:13.13.0
-    entrypoint: npm
-    args: ['run', 'start-backend']
