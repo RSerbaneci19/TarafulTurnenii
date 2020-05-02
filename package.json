@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve && node app/src/server.js",
+    "start": "concurrently --kill-others \"node src/app/server.js\" \"ng serve --host 192.168.1.2\"",
     "build": "ng build",
     "build-prod": "ng build --prod",
     "backend": "node src/app/server.js",
@@ -26,6 +26,7 @@
     "@angular/youtube-player": "^9.2.2",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
+    "concurrently": "^5.2.0",
     "express": "^4.17.1",
     "hammerjs": "^2.0.8",
     "lodash": "^4.17.15",
@@ -33,6 +34,7 @@
     "ngx-image-gallery": "^2.0.4",
     "nodemailer": "^6.4.6",
     "nodemailer-express-handlebars": "^4.0.0",
+    "npm-run-all": "^4.1.5",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
