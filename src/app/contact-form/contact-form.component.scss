@@ -1,13 +1,13 @@
 :host {
   width: 100%;
   height: 100%;
+  top: 6%;
   position: absolute;
   background-image: url(src/assets/ContactBG.jpg);
   background-position: center;
 
   form {
     position: relative;
-    top: 6%;
     width: 50%;
     margin: 0 auto;
   }
