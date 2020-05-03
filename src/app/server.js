@@ -42,7 +42,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-/* Serve the angular and static files Local, GCP don't care */
+/* Serve the angular and static files Local, GAE don't care */
 const staticAppOptions = {
   maxAge: '1d',
   redirect: false,
