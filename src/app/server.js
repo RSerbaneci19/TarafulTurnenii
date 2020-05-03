@@ -1,7 +1,7 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 8080;
 const bodyParser = require('body-parser');
 const hbs = require('nodemailer-express-handlebars')
 
@@ -40,6 +40,21 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+  /* serve the angular and static files */
+  const staticAppOptions = {
+    maxAge: '1d',
+    redirect: false,
+  };
+  /* TODO (i) Move the next into an .env file that is loaded on startup - see https://www.npmjs.com/package/dotenv */
+  const resolve = require('path').resolve;
+  const CLIENT_APP_PATH = resolve(__dirname, '../../dist');
+  app.use(
+    express.static(
+      CLIENT_APP_PATH,
+      staticAppOptions,
+    ),
+  );
 
 app.post('/send', function (req, res) {
 
@@ -104,7 +119,7 @@ app.post('/send', function (req, res) {
 
   transporter.sendMail(mailOptions, function (error, response) {
     if (error) {
-      console.log(error);
+      console.error(error);
       res.end('error');
     } else {
       console.log('Message sent: ', response);
@@ -113,6 +128,6 @@ app.post('/send', function (req, res) {
   });
 });
 
-app.listen(port, function () {
-  console.log('Express started on port: ', port);
+app.listen(PORT, function () {
+  console.log('Express started on port: ', PORT);
 });
