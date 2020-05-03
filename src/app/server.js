@@ -18,6 +18,7 @@ const handlebarOptions = {
 
 const transporter = nodemailer.createTransport({
 
+  /* TODO (i) Implement OAuth2 */
   host: 'smtp.gmail.com',
   provider: 'gmail',
   port: 465,
@@ -41,81 +42,36 @@ app.use(function (req, res, next) {
   next();
 });
 
-  /* serve the angular and static files */
-  const staticAppOptions = {
-    maxAge: '1d',
-    redirect: false,
-  };
-  /* TODO (i) Move the next into an .env file that is loaded on startup - see https://www.npmjs.com/package/dotenv */
-  const resolve = require('path').resolve;
-  const CLIENT_APP_PATH = resolve(__dirname, '../../dist');
-  app.use(
-    express.static(
-      CLIENT_APP_PATH,
-      staticAppOptions,
-    ),
-  );
+/* Serve the angular and static files Local, GCP don't care */
+const staticAppOptions = {
+  maxAge: '1d',
+  redirect: false,
+};
+
+/* TODO (i) Move the next into an .env file that is loaded on startup - see https://www.npmjs.com/package/dotenv */
+const resolve = require('path').resolve;
+const CLIENT_APP_PATH = resolve(__dirname, '../../dist');
+app.use(
+  express.static(
+    CLIENT_APP_PATH,
+    staticAppOptions,
+  ),
+);
 
 app.post('/send', function (req, res) {
-
-  let senderName = req.body.contactFormName;
-  let senderEmail = req.body.contactFormEmail;
-  let senderPhone = req.body.contactFormPhone;
-  let messageSubject = req.body.contactFormSubjects;
-  let messageText = req.body.contactFormMessage;
 
   let mailOptions = {
     from: '"Taraful Turnenii" <tarafulturnenii@gmail.com>',
     to: ['R.Serbaneci19@gmail.com'],
-    subject: messageSubject,
+    subject: req.body.contactFormSubjects,
     template: 'index',
     context: {
-      text: messageText,
-      name: senderName,
-      email: senderEmail,
-      phone: senderPhone
+      text: req.body.contactFormMessage,
+      name: req.body.contactFormName,
+      email: req.body.contactFormEmail,
+      phone: req.body.contactFormPhone
     }
   };
-
-  if (senderName === '') {
-    res.status(400);
-    res.send({
-      message: 'Bad request'
-    });
-    return;
-  }
-
-  if (senderEmail === '') {
-    res.status(400);
-    res.send({
-      message: 'Bad request'
-    });
-    return;
-  }
-
-  if (messageSubject === '') {
-    res.status(400);
-    res.send({
-      message: 'Bad request'
-    });
-    return;
-  }
-
-  if (messageText === '') {
-    res.status(400);
-    res.send({
-      message: 'Bad request'
-    });
-    return;
-  }
-
-  if (senderPhone === '') {
-    res.status(400);
-    res.send({
-      message: 'Bad request'
-    });
-    return;
-  }
 
   transporter.sendMail(mailOptions, function (error, response) {
     if (error) {

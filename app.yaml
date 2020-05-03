@@ -19,26 +19,26 @@ entrypoint: 'node src/app/server.js'
 # set up request handlers
 handlers:
 
-## set up app request handlers
+  ## set up app request handlers
 
-# send /send requests to the app
-- url: /send
-  script: auto
+  # send /send requests to the app
+  - url: /send
+    script: auto
 
-## set up the static file handler
+  ## set up the static file handler
 
-# static files directory
-- url: /(.*)
-  secure: always
-  redirect_http_response_code: '301'
-  static_files: dist/\1
-  require_matching_file: true
-  upload: dist/.*
+  # static files directory
+  - url: /(.*)
+    secure: always
+    redirect_http_response_code: '301'
+    static_files: dist/\1
+    require_matching_file: true
+    upload: dist/.*
 
-# serve index.html for all remaining i.e. not found
-- url: (.*)
-  secure: always
-  redirect_http_response_code: 301
-  static_files: dist/index.html
-  upload:  dist/index.html
+  # serve index.html for all remaining i.e. not found
+  - url: (.*)
+    secure: always
+    redirect_http_response_code: 301
+    static_files: dist/index.html
+    upload:  dist/index.html
 # [END Taraful Turnenii]

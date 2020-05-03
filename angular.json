@@ -24,7 +24,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -122,8 +121,5 @@
       }
     }
   },
-  "defaultProject": "Taraful-Turnenii-WebApp",
-  "cli": {
-    "analytics": "310337b7-f9c9-4115-912f-e2a76e07987f"
-  }
+  "defaultProject": "Taraful-Turnenii-WebApp"
 }
