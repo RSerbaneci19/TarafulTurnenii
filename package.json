@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "backend": "node src/app/server.js",
+    "start": "ng serve --host 192.168.1.2",
+    "backend": "node backend/server.js",
     "build": "ng build",
     "build-prod": "ng build --prod",
     "test": "ng test",
