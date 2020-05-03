@@ -5,7 +5,7 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class ConnectionService {
-  url: string = 'https://backend-dot-tarafulturnenii.ey.r.appspot.com/send';
+  url: string = '/send';
 
   constructor(private http: HttpClient) {
   }

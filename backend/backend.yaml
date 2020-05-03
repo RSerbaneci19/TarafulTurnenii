@@ -1,4 +1,0 @@
-# [START Backend]
-runtime: nodejs12
-service: backend
-# [END Backend]
