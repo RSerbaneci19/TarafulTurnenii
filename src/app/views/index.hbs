@@ -23,12 +23,30 @@
 </head>
 <body>
 <h1>WebApp - Taraful Turnenii</h1>
-<h2>Nume: {{name}}<br>
+<h2>
+  Nume: {{name}}<br>
   E-mail: {{email}}<br>
   Nr.Tel: {{phone}}
   <br>
   <br>
-  Mesaj: </h2>
-<p>{{text}}</p>
+</h2>
+{{#if locationType}}
+  <h2>
+    Detalii Eveniment:<br><br>
+    Tip Eveniment: {{eventType}}<br>
+    Tip Locatie: {{locationType}}<br>
+    Adresa Locatie: {{address}}<br>
+    Data: {{date}}<br>
+    De la: {{fromTime}}<br>
+    Pana la: {{toTime}}<br>
+    <br>
+  </h2>
+{{/if}}
+{{#if text}}
+  <h2>
+    Mesaj :
+    <p>{{text}}</p>
+  </h2>
+{{/if}}
 </body>
 </html>

@@ -10,7 +10,7 @@ const handlebarOptions = {
     extName: '.hbs',
     partialsDir: './src/app/views',
     layoutsDir: './src/app/views',
-    defaultLayout: 'index.hbs',
+    defaultLayout: 'index.hbs'
   },
   viewPath: './src/app/views',
   extName: '.hbs',
@@ -63,13 +63,19 @@ app.post('/send', function (req, res) {
   let mailOptions = {
     from: '"Taraful Turnenii" <tarafulturnenii@gmail.com>',
     to: ['R.Serbaneci19@gmail.com', 'turneanum@gmail.com'],
-    subject: req.body.contactFormSubjects,
+    subject: req.body.contactFormMainDropdown,
     template: 'index',
     context: {
-      text: req.body.contactFormMessage,
       name: req.body.contactFormName,
       email: req.body.contactFormEmail,
-      phone: req.body.contactFormPhone
+      phone: req.body.contactFormPhone,
+      eventType: req.body.contactFormMainDropdown,
+      locationType: req.body.contactFormLocationType,
+      address: req.body.contactFormAddress,
+      date: req.body.contactFormDate,
+      fromTime: req.body.contactFormFromTime,
+      toTime: req.body.contactFormToTime,
+      text: req.body.contactFormMessage
     }
   };
 

@@ -1,0 +1,51 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="contactForm">
+
+  <p>Inregistrare Eveniment</p>
+
+  <alert></alert>
+
+  <input class="form-control mb-4" formControlName="contactFormName" id="defaultContactFormName"
+         placeholder="Nume & Prenume" type="text">
+
+  <input class="form-control mb-4" formControlName="contactFormEmail" id="defaultContactFormEmail"
+         placeholder="E-mail" type="email">
+
+  <input class="form-control mb-4" formControlName="contactFormPhone" id="defaultContactFormPhone"
+         placeholder="Nr. Telefon" type="text">
+
+  <select class="browser-default custom-select mb-4" formControlName="contactFormMainDropdown" id="dropdownEvent">
+    <option disabled selected value="">Tip Eveniment</option>
+    <option value="Inregistrare Nunta">Nunta</option>
+    <option value="Inregistrare Botez">Botez</option>
+    <option value="Inregistrare Aniversare">Aniversare</option>
+  </select>
+
+  <select class="browser-default custom-select mb-4" formControlName="contactFormLocationType" id="dropdownLocation">
+    <option disabled selected value="">Tip Locatie</option>
+    <option value="Restaurant">Restaurant</option>
+    <option value="Ballroom">Ballroom</option>
+    <option value="Proprietate Proprie">Proprietate Individuala</option>
+  </select>
+
+  <input class="form-control mb-4" formControlName="contactFormAddress" id="defaultContactFormAddress"
+         placeholder="Adresa Locatiei" type="text">
+
+  <input class="form-control mb-4" formControlName="contactFormDate" id="defaultContactFormDate"
+         placeholder="Data Evenimentului" type="text">
+
+  <label for="defaultContactFormTime1" id="labelHours">Interval Orar:</label>
+  <input class="form-control mb-4" formControlName="contactFormFromTime" id="defaultContactFormTime1" type="time">
+  <input class="form-control mb-4" formControlName="contactFormToTime" id="defaultContactFormTime2" type="time">
+
+  <div class="form-group">
+    <textarea class="form-control rounded-0" formControlName="contactFormMessage"
+              id="exampleFormControlTextarea2"
+              placeholder="Alte detalii ..." rows="3"></textarea>
+  </div>
+
+  <button [disabled]="disabledSubmitButton"
+          class="z-depth-0 my-4 waves-effect" type="submit">TRIMITE
+  </button>
+</form>
+
+

@@ -13,6 +13,11 @@
     margin: 0 auto;
   }
 
+  alert {
+    position: relative;
+    margin-top: 5%;
+  }
+
   input, option, select, textarea {
     background-color: #232323;
     color: #cbcbcb;
@@ -47,6 +52,22 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  #defaultContactFormTime1, #defaultContactFormTime2 {
+    float: right;
+    display: inline;
+    margin-left: 0.5%;
+    width: 25%;
+  }
+
+  label {
+    margin-top: 0.7%;
+  }
+
+  #labelHours {
+    float: left;
+  }
+
 
   button:hover {
     background: linear-gradient(to bottom, black, #2d3032);

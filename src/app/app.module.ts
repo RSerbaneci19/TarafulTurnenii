@@ -5,6 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSliderModule} from "@angular/material/slider";
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDialogModule} from "@angular/material/dialog";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
@@ -23,6 +24,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {NgxVideoGalleryComponent} from './ngx-video-gallery/ngx-video-gallery.component';
 import {YouTubePlayerModule} from "@angular/youtube-player";
 import {ContactFormComponent} from './contact-form/contact-form.component';
+import {EventsFormComponent} from './events-form/events-form.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -30,6 +32,7 @@ const routes: Routes = [
   {path: 'photoGallery', component: NgxPhotoGalleryComponent},
   {path: 'videoGallery', component: NgxVideoGalleryComponent},
   {path: 'contact', component: ContactFormComponent},
+  {path: 'events', component: EventsFormComponent},
   {path: 'error', component: NotFoundComponent},
   {path: '**', redirectTo: '/error'}
 ];
@@ -42,7 +45,8 @@ const routes: Routes = [
     NotFoundComponent,
     NgxPhotoGalleryComponent,
     NgxVideoGalleryComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    EventsFormComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,8 @@ const routes: Routes = [
     MatMenuModule,
     YouTubePlayerModule,
     ReactiveFormsModule,
-    AlertModule
+    AlertModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

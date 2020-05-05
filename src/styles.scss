@@ -45,6 +45,10 @@ ngx-photo-gallery, ngx-video-gallery {
   scrollbar-color: #2a2c2e #1c1e1f;
 }
 
+#defaultContactFormName, #defaultContactFormLocation, #defaultContactFormAddress, #defaultContactFormDate, #defaultContactFormEmail, #defaultContactFormPhone, #textAreaDetails, #dropdownEvent, #dropdownLocation, #exampleFormControlTextarea2, #defaultContactFormTime1, #defaultContactFormTime2 {
+  border-color: rgba(39, 47, 52);
+}
+
 @font-face {
   font-family: 'Great Vibes';
   font-style: normal;

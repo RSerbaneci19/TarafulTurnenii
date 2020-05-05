@@ -4,11 +4,11 @@ import {ConnectionService} from "../connection.service";
 import {AlertService} from "../_alert";
 
 @Component({
-  selector: 'app-contact-form',
-  templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.scss']
+  selector: 'app-events-form',
+  templateUrl: './events-form.component.html',
+  styleUrls: ['./events-form.component.scss']
 })
-export class ContactFormComponent implements AfterViewInit {
+export class EventsFormComponent implements AfterViewInit {
 
   contactForm: FormGroup;
   disabledSubmitButton: boolean = true;
@@ -23,8 +23,13 @@ export class ContactFormComponent implements AfterViewInit {
       'contactFormName': ['', Validators.required],
       'contactFormEmail': ['', Validators.compose([Validators.required, Validators.email])],
       'contactFormMainDropdown': ['', Validators.required],
-      'contactFormMessage': ['', Validators.required],
+      'contactFormLocationType': ['', Validators.required],
       'contactFormPhone': ['', Validators.required],
+      'contactFormAddress': ['', Validators.required],
+      'contactFormDate': ['', Validators.required],
+      'contactFormFromTime': ['', Validators.required],
+      'contactFormToTime': ['', Validators.required],
+      'contactFormMessage': ['', !Validators],
     });
   }
 

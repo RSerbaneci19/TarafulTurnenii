@@ -16,7 +16,7 @@
 }
 
 .mat-toolbar-row {
-  background: linear-gradient(to right, #000000, #525252);
+  background: linear-gradient(to left, #2d3032, black);
 }
 
 .button.mat-icon {
@@ -78,7 +78,7 @@ img {
   position: relative;
   width: 170px;
   top: 4px;
-  background: linear-gradient(to bottom, #424242, black);
+  background: linear-gradient(to bottom, #2d3032, black);
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -90,7 +90,7 @@ img {
 }
 
 .mat-button:hover {
-  background: linear-gradient(to bottom, black, #c1c1c1);
+  background: linear-gradient(to bottom, black, #2d3032);
 }
 
 *:focus {
