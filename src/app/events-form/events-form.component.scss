@@ -8,6 +8,7 @@
   overflow: auto;
 
   form {
+    top: 2%;
     position: relative;
     width: 50%;
     margin: 0 auto;
@@ -58,6 +59,27 @@
     display: inline;
     margin-left: 0.5%;
     width: 25%;
+  }
+
+  .serviceItems {
+    width: 100%;
+    padding-left: 1%;
+    padding-top: 1%;
+
+    #checkbox1, #checkbox2, #checkbox3, #checkbox4, #checkbox5, #checkbox6 {
+      width: 5%;
+      display: inline-block;
+    }
+
+    label {
+      padding-left: 1%;
+      font: 500 30px/1.5 'Great Vibes', Helvetica, sans-serif;
+      color: #9e864f;
+      position: relative;
+      vertical-align: top;
+      display: inline;
+    }
+
   }
 
   label {

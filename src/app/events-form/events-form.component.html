@@ -18,7 +18,32 @@
     <option value="Inregistrare Nunta">Nunta</option>
     <option value="Inregistrare Botez">Botez</option>
     <option value="Inregistrare Aniversare">Aniversare</option>
+    <option value="Inregistrare Petrecere Corporate">Petrecere Corporate</option>
+    <option value="Inregistrare Petrecere Privata">Petrecere Privata</option>
   </select>
+
+  <label>Selectati serviciile dorite:</label><br>
+  <div class="serviceItems" id="serviceItems">
+    <input class="form-control mb-2" formControlName="contactFormCheckBox1" id="checkbox1" type="checkbox"
+           value="Program Folcloric">
+    <label class="options" for="checkbox1">Program Folcloric</label><br>
+    <input class="form-control mb-2" formControlName="contactFormCheckBox2" id="checkbox2" type="checkbox"
+           value="Muzică Lăutarească">
+    <label class="options" for="checkbox2">Muzică Lăutarească</label><br>
+    <input class="form-control mb-2" formControlName="contactFormCheckBox3" id="checkbox3" type="checkbox"
+           value="Show Instrumental">
+    <label class="options" for="checkbox3">Show Instrumental</label><br>
+    <input class="form-control mb-2" formControlName="contactFormCheckBox4" id="checkbox4" type="checkbox"
+           value="Café - Concert">
+    <label class="options" for="checkbox4">Café - Concert</label><br>
+    <input class="form-control mb-2" formControlName="contactFormCheckBox5" id="checkbox5" type="checkbox"
+           value="Show Muzică Tigănească">
+    <label class="options" for="checkbox5">Show Muzică Tigănească</label><br>
+    <input class="form-control mb-2" formControlName="contactFormCheckBox6" id="checkbox6" type="checkbox"
+           value="Manele">
+    <label class="options" for="checkbox6">Manele</label><br><br>
+  </div>
+
 
   <select class="browser-default custom-select mb-4" formControlName="contactFormLocationType" id="dropdownLocation">
     <option disabled selected value="">Tip Locatie</option>

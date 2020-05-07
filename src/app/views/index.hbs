@@ -34,6 +34,21 @@
   <h2>
     Detalii Eveniment:<br><br>
     Tip Eveniment: {{eventType}}<br>
+    Servicii Muzicale Alese: <br>
+    <list>
+      {{#if checkbox1}}
+        <li>Program Folcloric<br></li>{{/if}}
+      {{#if checkbox2}}
+        <li>Muzică Lăutarească<br></li>{{/if}}
+      {{#if checkbox3}}
+        <li>Show Instrumental<br></li>{{/if}}
+      {{#if checkbox4}}
+        <li>Café - Concert<br></li>{{/if}}
+      {{#if checkbox5}}
+        <li>Show Muzică Tigănească<br></li>{{/if}}
+      {{#if checkbox6}}
+        <li>Manele<br></li>{{/if}}
+    </list>
     Tip Locatie: {{locationType}}<br>
     Adresa Locatie: {{address}}<br>
     Data: {{date}}<br>

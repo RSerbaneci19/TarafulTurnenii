@@ -41,11 +41,11 @@ export class ContactFormComponent implements AfterViewInit {
 
   onSubmit() {
     this.connectionService.sendMessage(this.contactForm.value).subscribe(() => {
-      this.alertService.success('Multumim! Am primit mesajul dumneavoastra!', this.options.autoClose);
+      this.alertService.success('Mulțumim! Am primit mesajul dumneavoastră!', this.options.autoClose);
       this.contactForm.reset();
       this.disabledSubmitButton = true;
     }, error => {
-      this.alertService.error('Ne pare rau, a aparut o eroare! Va rugam incercati mai tarziu!')
+      this.alertService.error('Ne pare rău, a apărut o eroare! Vă rugăm încercați mai târziu!')
       console.log('Error', error);
     });
   }

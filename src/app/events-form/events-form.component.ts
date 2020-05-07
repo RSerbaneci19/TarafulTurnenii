@@ -30,6 +30,12 @@ export class EventsFormComponent implements AfterViewInit {
       'contactFormFromTime': ['', Validators.required],
       'contactFormToTime': ['', Validators.required],
       'contactFormMessage': ['', !Validators],
+      'contactFormCheckBox1': ['', !Validators],
+      'contactFormCheckBox2': ['', !Validators],
+      'contactFormCheckBox3': ['', !Validators],
+      'contactFormCheckBox4': ['', !Validators],
+      'contactFormCheckBox5': ['', !Validators],
+      'contactFormCheckBox6': ['', !Validators],
     });
   }
 
@@ -46,11 +52,11 @@ export class EventsFormComponent implements AfterViewInit {
 
   onSubmit() {
     this.connectionService.sendMessage(this.contactForm.value).subscribe(() => {
-      this.alertService.success('Multumim! Am primit mesajul dumneavoastra!', this.options.autoClose);
+      this.alertService.success('Mulțumim! Am primit mesajul dumneavoastră!', this.options.autoClose);
       this.contactForm.reset();
       this.disabledSubmitButton = true;
     }, error => {
-      this.alertService.error('Ne pare rau, a aparut o eroare! Va rugam incercati mai tarziu!')
+      this.alertService.error('Ne pare rău, a apărut o eroare! Vă rugăm încercați mai târziu!')
       console.log('Error', error);
     });
   }

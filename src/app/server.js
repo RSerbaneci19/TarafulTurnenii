@@ -75,7 +75,13 @@ app.post('/send', function (req, res) {
       date: req.body.contactFormDate,
       fromTime: req.body.contactFormFromTime,
       toTime: req.body.contactFormToTime,
-      text: req.body.contactFormMessage
+      text: req.body.contactFormMessage,
+      checkbox1: req.body.contactFormCheckBox1,
+      checkbox2: req.body.contactFormCheckBox2,
+      checkbox3: req.body.contactFormCheckBox3,
+      checkbox4: req.body.contactFormCheckBox4,
+      checkbox5: req.body.contactFormCheckBox5,
+      checkbox6: req.body.contactFormCheckBox6,
     }
   };
 
